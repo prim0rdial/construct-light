@@ -1,0 +1,22 @@
+{
+  "name": "construct-light",
+  "version": "1.0.0",
+  "description": "Construct Light a small and low opiniated SASS boiler-plate/template. Great for a quick setup with a bundler like Parcel or quick integration with a front-end framework.",
+  "main": "./src/index.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "parcel ./src/index.html"
+  },
+  "keywords": [
+    "SASS",
+    "CSS",
+    "Template",
+    "Construct"
+  ],
+  "author": "Jérémy Le Puillandre",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.32.0"
+  }
+}

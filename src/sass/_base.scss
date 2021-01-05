@@ -1,0 +1,121 @@
+@import "./variables/base";
+
+@mixin import-fonts($font-header, $font-body) {
+  @import url("https://fonts.googleapis.com/css2?family=#{$font-header}:wght@300;400;700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=#{$font-body}:wght@300;400;700&display=swap");
+}
+
+@include import-fonts($font-header, $font-body);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 16px;
+  width: 100vw;
+}
+
+// Reset line height for headers
+@for $i from 1 through 6 {
+  h#{$i} {
+    line-height: 1.125;
+  }
+}
+
+// Media queries
+@mixin mq-sm {
+  @media screen and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin mq-md {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin mq-lg {
+  @media screen and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin mq-xl {
+  @media screen and (min-width: $xl) {
+    @content;
+  }
+}
+
+// Flex
+
+%flex {
+  display: flex;
+  align-items: center;
+}
+
+%flex-col {
+  @extend %flex;
+  flex-direction: column;
+}
+
+// Grid
+
+// Generate 1 to 12 cols grid
+@for $i from 1 through 12 {
+  .grid-col-#{$i} {
+    display: grid;
+    grid-template-columns: repeat($i, 1fr);
+  }
+}
+
+// Wrap content
+
+.wrapper {
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include mq-sm {
+    max-width: $wrapper-sm;
+  }
+
+  @include mq-md {
+    max-width: $wrapper-md;
+  }
+
+  @include mq-lg {
+    max-width: $wrapper-lg;
+  }
+
+  @include mq-xl {
+    max-width: $wrapper-xl;
+  }
+}
+
+// Colors
+@each $name, $color in $theme-colors {
+  .text-#{$name} {
+    color: $color;
+  }
+
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}

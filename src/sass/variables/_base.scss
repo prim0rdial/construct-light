@@ -1,0 +1,28 @@
+// Fonts
+$font-header: "Open Sans";
+$font-body: "Meriweather";
+
+// Screen sizes
+$sm: 36rem;
+$md: 48rem;
+$lg: 62rem;
+$xl: 74rem;
+
+// Wrapper max-width
+$wrapper-sm: 33.75rem;
+$wrapper-md: 45rem;
+$wrapper-lg: 62rem;
+$wrapper-xl: 71.25rem;
+
+// Colors
+$main-color: #343434;
+$secondary-color: #f9f9f9;
+$accent: #f02f0f;
+$neutral: #ccc;
+
+$theme-colors: (
+  "main-color": $main-color,
+  "secondary-color": $secondary-color,
+  "accent": $accent,
+  "neutral": $neutral,
+);
